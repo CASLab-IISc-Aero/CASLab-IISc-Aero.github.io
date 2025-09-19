@@ -13,20 +13,20 @@ body {
 }
 
 .container {
-    max-width: 1200px;
+    max-width: flex;
     margin: 0 auto;
     background: rgba(255, 255, 255, 0.95);
     backdrop-filter: blur(10px);
     border-radius: 20px;
-    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 20px 40px rgb(255, 255, 255);
     overflow: hidden;
     margin-top: 20px;
     margin-bottom: 20px;
 }
 
 header {
-    background: linear-gradient(135deg, #334c92e7, #3498db);
-    color: white;
+    background: linear-gradient(135deg, #ffffff, #ffffff);
+    color: rgb(0, 0, 0);
     padding: 2rem;
     text-align: center;
     position: relative;
@@ -69,7 +69,7 @@ h1 {
 }
 
 nav {
-    background: rgba(52, 73, 94, 0.95);
+    background: #ffffff;
     backdrop-filter: blur(10px);
     padding: 0;
     position: sticky;
@@ -92,10 +92,10 @@ nav {
     width: 100%;
     padding: 1rem 1.5rem;
     background: transparent;
-    color: white;
+    color: #000000;
     border: none;
     cursor: pointer;
-    font-size: 1rem;
+    font-size: 1.25rem;
     font-weight: 500;
     transition: all 0.3s ease;
     position: relative;
@@ -123,8 +123,8 @@ nav {
 }
 
 .nav-tabs button.active {
-    background: linear-gradient(135deg, #3498db, #2980b9);
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    /* background: linear-gradient(135deg, #3498db, #2980b9); */
+    /* box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); */
 }
 
 .content {
@@ -155,7 +155,8 @@ nav {
 
 .section-title {
     color: #2c3e50;
-    margin-bottom: 1.5rem;
+    /* margin-bottom: 1.5rem; */
+    margin: 2rem 0 1.5rem 0;
     font-size: 2rem;
     border-bottom: 3px solid #3498db;
     padding-bottom: 0.5rem;
@@ -178,20 +179,74 @@ nav {
     height: auto;
 }
 
-
 .card:hover {
     transform: translateY(-5px);
     box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
 }
 
-.person-card {
+
+.card-layout {
+    display: flex;
+    flex-direction: row;
+    gap: 2rem;
+    align-items: flex-start;
+    margin-top: 2rem;
+}
+
+.main-column {
+    flex: 3;
+}
+
+.sidebar-column {
+    flex: 1;
+    position: sticky;
+    top: 0;
+    /* Stick it to the top */
+    height: calc(100vh - 60px);
+    /* Adjust height to take up the full vertical space minus the nav height */
+    overflow-y: auto;
+    /* Ensure scrolling for the sidebar content */
+}
+
+/* .person-card {
     display: flex;
     align-items: center;
     gap: 1.5rem;
     margin-bottom: 1.5rem;
+} */
+
+
+.person-card {
+    display: flex;
+    flex-direction: row;
+    /* row to put photo left and info right */
+    align-items: center;
+    /* vertically center the items */
+    background: white;
+    border-radius: 15px;
+    padding: 1.5rem;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+    border: 1px solid #e1e8ed;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    gap: 1.5rem;
+    /* space between photo and info */
 }
 
-.person-photo {
+.person-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
+}
+
+.person-card-container {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    /* exactly 2 cards per row */
+    gap: 2rem;
+    margin-top: 0rem;
+    margin-bottom: 4rem;
+}
+
+/* .person-photo {
     width: 200px;
     height: 200px;
     border-radius: 50%;
@@ -203,15 +258,31 @@ nav {
     font-size: 2rem;
     font-weight: bold;
     flex-shrink: 0;
+} */
+
+.person-photo {
+    width: 300px;
+    height: 300px;
+    border-radius: 0%;
+    background: linear-gradient(135deg, #74b9ff, #0984e3);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    font-size: 2rem;
+    font-weight: bold;
+    flex-shrink: 0;
+    margin-bottom: 0;
+    /* remove bottom margin */
 }
 
 .person-photo img {
     width: 100%;
     height: 100%;
     object-fit: cover;
+    border-radius: 0%;
+    /* keep image circular */
 }
-
-
 
 .person-info h3 {
     color: #2c3e50;
@@ -248,18 +319,41 @@ nav {
     font-weight: 500;
 }
 
-.project-grid {
+/* .project-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
     gap: 2rem;
+} */
+
+.project-grid {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
 }
 
-.project-card {
+
+/* .project-card {
     background: linear-gradient(135deg, #f8f9fa, #e9ecef);
     border-radius: 15px;
     padding: 2rem;
     position: relative;
     overflow: hidden;
+} */
+
+
+.project-card {
+    display: flex;
+    flex-direction: row;
+    align-items: stretch;
+    gap: 2rem;
+    background: linear-gradient(135deg, #ffffff, #ffffff);
+    border-radius: 15px;
+    padding: 2rem;
+    position: relative;
+    overflow: hidden;
+    width: 100%;
+    max-width: 1000px;
+    height: 300px;
 }
 
 .project-card::before {
@@ -269,8 +363,62 @@ nav {
     left: 0;
     width: 100%;
     height: 4px;
-    background: linear-gradient(135deg, #3498db, #2980b9);
+    background: linear-gradient(135deg, #ffffff, #ffffff);
+    box-shadow: 0 40px 40px rgb(127, 224, 224);
 }
+
+.project-image {
+    flex: 0 0 400px;
+    /* fixed width */
+    height: 300px;
+    border-radius: 10px;
+    overflow: hidden;
+    background-color: #ccc;
+}
+
+/* .project-image-kush {
+    flex: 0 0 400px;
+    height: 300px;
+    border-radius: 10px;
+    overflow: hidden;
+    background-color: #ccc;
+} */
+
+.project-image-kush {
+    flex: 0 0 400px;
+    height: 100px;
+    border-radius: 10px;
+    overflow: hidden;
+    background-color: #ccc;
+    background-image: url('your-image.jpg');
+    background-size: cover; /* Cover the container, crop overflow */
+    background-position: center;
+    background-repeat: no-repeat;
+    display: flex;
+    margin-top: 60px;
+
+}
+
+.project-image-kush img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* This makes the image fill the box while cropping the overflow */
+    display: block;
+}
+
+.project-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.project-content {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
 
 .project-title {
     color: #2c3e50;
@@ -330,11 +478,10 @@ nav {
 .hero-description {
     font-size: 1.2rem;
     color: #666;
-    max-width: 800px;
+    max-width: 1000px;
     margin: 0 auto;
     line-height: 1.8;
 }
-
 
 .opening-title {
     font-size: 1.5rem;
@@ -393,9 +540,38 @@ nav {
     color: white;
 }
 
-
 .card .contact-item+.contact-item {
     margin-top: 2rem;
+}
+
+.table-wrapper {
+    overflow-x: auto;
+}
+
+.intern-table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 1rem;
+}
+
+.intern-table thead {
+    background-color: #3498db;
+    color: white;
+}
+
+.intern-table th,
+.intern-table td {
+    padding: 1rem;
+    border: 1px solid #e1e8ed;
+    text-align: left;
+}
+
+.intern-table tbody tr:nth-child(even) {
+    background-color: #f2f8fc;
+}
+
+.intern-table tbody tr:hover {
+    background-color: #e8f4fc;
 }
 
 
@@ -419,11 +595,36 @@ nav {
         text-align: center;
     }
 
+    .person-card-container {
+        grid-template-columns: 1fr;
+        /* Stack cards on smaller screens */
+    }
+
+    .person-photo {
+        width: 120px;
+        height: 120px;
+    }
+
+    .person-info h3 {
+        font-size: 1.1rem;
+        /* Adjust font size for smaller screens */
+    }
+
     .hero-title {
         font-size: 2rem;
     }
 
     .content {
         padding: 1rem;
+    }
+
+    /* Responsive layout for main + sidebar */
+    .card-layout {
+        flex-direction: column;
+    }
+
+    .main-column,
+    .sidebar-column {
+        width: 100%;
     }
 }
