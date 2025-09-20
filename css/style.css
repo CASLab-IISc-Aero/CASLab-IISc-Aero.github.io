@@ -486,12 +486,13 @@ nav {
 }
 
 .hero-description {
-    font-size: 1.5rem;
+    font-size: 1.8rem;
     color: #ffffff;
     max-width: 1200px;
     margin: 0 auto;
     line-height: 1.8;
     text-align: center;
+    font-family: 'Times New Roman', Times, serif;
 }
 
 .opening-title {
