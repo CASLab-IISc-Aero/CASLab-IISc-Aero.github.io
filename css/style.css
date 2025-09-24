@@ -20,14 +20,16 @@ body {
 }
 
 .container {
-    max-width: flex;
-    margin: 0 auto;
+    width: 100%;
+    max-width: 100%;
+    margin: 0;
+    padding: 0;
     background: rgba(255, 255, 255, 0.95);
     backdrop-filter: blur(10px);
     border-radius: 20px;
     box-shadow: 0 20px 40px rgb(255, 255, 255);
     overflow: hidden;
-    margin-top: 20px;
+    margin-top: 0px;
     margin-bottom: 20px;
 }
 
@@ -38,6 +40,10 @@ header {
     text-align: center;
     position: relative;
     overflow: hidden;
+    /* justify-content: center; */
+    /* margin-left: 30%; */
+    margin: 0 auto;
+    /* max-width: XYZ; */
 }
 
 header::before {
@@ -66,17 +72,60 @@ h1 {
     margin-bottom: 0.5rem;
     position: relative;
     z-index: 1;
+    font-family: 'Cardo', serif;
+    font-weight: 100;
+    /* display: flex;
+    align-items: center;
+    gap: 1rem; */
 }
+
+.header-logo {
+    height: 7rem; /* or your desired size */
+    width: auto;
+    display:block;
+    max-width: 100%;
+    flex-shrink: 0;
+    margin-left: 20%;
+    margin-top: 2.5%;
+}
+
+
+.header-container {
+    display: flex;
+    align-items: flex-start;
+    /* vertically center logo and text */
+    gap: 1.5rem;
+    /* space between logo and text */
+    /* padding-left: 0;
+    margin-left: 0; */
+}
+
+.header-text h1 {
+    font-size: 3rem;
+    width:max-content;
+    margin: 0 0 0.5rem 0;
+    align-content: center;
+    margin-left: 15%;
+    font-family: 'Cardo', serif;
+    font-weight: 100;
+
+    /* justify-content: center; */
+}
+
 
 .subtitle {
     font-size: 1.35rem;
     opacity: 0.9;
     position: relative;
     z-index: 1;
+    margin-left: 35%;
+    width: max-content;
 }
 
+
 nav {
-    background: #ffffff;
+    /* background: #6ebeff; */
+    background: #ebecec;
     backdrop-filter: blur(10px);
     padding: 0;
     position: sticky;
@@ -85,14 +134,17 @@ nav {
 }
 
 .nav-tabs {
-    display: flex;
+    display: inline-flex;
     list-style: none;
     overflow-x: auto;
+    margin: auto auto auto 28%;
+    gap: 100px;
 }
 
 .nav-tabs li {
     flex: 1;
     min-width: fit-content;
+
 }
 
 .nav-tabs button {
@@ -103,10 +155,12 @@ nav {
     border: none;
     cursor: pointer;
     font-size: 1.25rem;
-    font-weight: 500;
+    font-weight: 700;
     transition: all 0.3s ease;
     position: relative;
     overflow: hidden;
+    font-family: 'Cardo', serif;
+
 }
 
 .nav-tabs button::before {
@@ -565,23 +619,26 @@ nav {
     /* prevent shrinking */
 }
 
-
 .hero-section {
-    text-align: right;
-    padding: 10rem;
-    display: flex;
-    background: linear-gradient(135deg, rgba(148, 168, 212, 0.1), rgba(22, 44, 236, 0.1));
-    background-image: url("../pictures/test.png");
-    /* background-color: #4fa5e7; */
+    text-align: center;
+    padding: 0;
+    /* Padding moved to child if needed */
     border-radius: 15px;
     margin-bottom: 2rem;
-    background-size: cover;
-    justify-content: center;
-    align-items: right;
-    background-position: center center;
-    background-repeat: no-repeat;
-    color: white;
+    display: flex;
+    flex-direction: column;
+    /* Stack image and description vertically */
+    align-items: center;
+}
 
+.hero-image {
+    width: 103.4%;
+    height: 550px;
+    /* or whatever height you want */
+    background: linear-gradient(135deg, rgba(148, 168, 212, 0.1), rgba(22, 44, 236, 0.1)),
+        url("../pictures/test.png") center center / cover no-repeat;
+    border-radius: 0px;
+    margin-top: -32px;
 }
 
 .hero-title {
@@ -591,14 +648,15 @@ nav {
 }
 
 .hero-description {
-    font-size: 1.8rem;
-    color: #ffffff;
+    font-size: 1.5rem;
+    color: #000000;
     max-width: 1200px;
-    margin: 0 auto;
+    margin: 2rem auto 0;
     line-height: 1.8;
     text-align: center;
     font-family: 'Times New Roman', Times, serif;
 }
+
 
 .opening-title {
     font-size: 1.5rem;
