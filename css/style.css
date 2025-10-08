@@ -72,7 +72,8 @@ h1 {
     margin-bottom: 0.0rem;
     position: relative;
     z-index: 1;
-    font-family: 'Cardo', serif;
+    /* font-family: 'Cardo', serif; */
+    font-family: CMS;
     font-weight: 100;
     /* display: flex;
     align-items: center;
