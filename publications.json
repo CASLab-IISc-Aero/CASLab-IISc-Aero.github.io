@@ -1,0 +1,233 @@
+[
+  {
+    "title": "A comparison of hybridized and standard DG methods for target-based hp-adaptive simulation of compressible flow",
+    "authors": "Michael Woopen, Aravind Balan, Georg May, Jochen Sch\u00fctz",
+    "venue": "Computers & Fluids",
+    "year": 2014,
+    "url": "https://www.sciencedirect.com/science/article/pii/S0045793014001224"
+  },
+  {
+    "title": "A stable high-order spectral difference method for hyperbolic conservation laws on triangular elements",
+    "authors": "Aravind Balan, Georg May, Joachim Sch\u00f6berl",
+    "venue": "Journal of Computational Physics",
+    "year": 2012,
+    "url": "https://www.sciencedirect.com/science/article/pii/S0021999111006978"
+  },
+  {
+    "title": "Verification of unstructured grid adaptation components",
+    "authors": "Michael A Park, Aravind Balan, William K Anderson, Marshall C Galbraith, Philip Caplan, Hugh A Carson, Todd R Michal, Joshua A Krakos, Dmitry S Kamenetskiy, Adrien Loseille, Fr\u00e9d\u00e9ric Alauzet, Lo\u00efc Frazza, Nicolas Barral",
+    "venue": "N/A",
+    "year": 2019,
+    "url": "https://arc.aiaa.org/doi/pdf/10.2514/6.2019-1723"
+  },
+  {
+    "title": "Verification of anisotropic mesh adaptation for turbulent simulations over ONERA M6 wing",
+    "authors": "Aravind Balan, Michael A Park, William K Anderson, Dmitry S Kamenetskiy, Joshua A Krakos, Todd Michal, Fr\u00e9d\u00e9ric Alauzet",
+    "venue": "AIAA Journal",
+    "year": 2020,
+    "url": "https://arc.aiaa.org/doi/abs/10.2514/1.J059158"
+  },
+  {
+    "title": "Adjoint-based hp-adaptivity on anisotropic meshes for high-order compressible flow simulations",
+    "authors": "Aravind Balan, Michael Woopen, Georg May",
+    "venue": "Computers & Fluids",
+    "year": 2016,
+    "url": "https://www.sciencedirect.com/science/article/pii/S0045793016300901"
+  },
+  {
+    "title": "Exploring Unstructured Mesh Adaptation for Hybrid Reynolds-Averaged Navier\u2013Stokes/Large Eddy Simulation",
+    "authors": "Michael A Park, William L Kleb, William K Anderson, Stephen L Wood, Aravind Balan, Beckett Yx Zhou, Nicolas R Gauger",
+    "venue": "N/A",
+    "year": 2020,
+    "url": "https://arc.aiaa.org/doi/abs/10.2514/6.2020-1139"
+  },
+  {
+    "title": "A review and comparison of error estimators for anisotropic mesh adaptation for flow simulations",
+    "authors": "Aravind Balan, Michael A Park, Stephen L Wood, W Kyle Anderson, Ajay Rangarajan, Devina P Sanjaya, Georg May",
+    "venue": "Pergamon",
+    "year": 2022,
+    "url": "https://www.sciencedirect.com/science/article/pii/S0045793021003601"
+  },
+  {
+    "title": "Verification of unstructured grid adaptation components",
+    "authors": "Marshall C Galbraith, Philip C Caplan, Hugh A Carson, Michael A Park, Aravind Balan, W Kyle Anderson, Todd Michal, Joshua A Krakos, Dmitry S Kamenetskiy, Adrien Loseille, Fr\u00e9d\u00e9ric Alauzet, Lo\u00efc Frazza, Nicolas Barral",
+    "venue": "AIAA Journal",
+    "year": 2020,
+    "url": "https://arc.aiaa.org/doi/abs/10.2514/1.J058783"
+  },
+  {
+    "title": "Mesh optimization for discontinuous Galerkin methods using a continuous mesh model",
+    "authors": "Ajay Rangarajan, Aravind Balan, Georg May",
+    "venue": "AIAA Journal",
+    "year": 2018,
+    "url": "https://arc.aiaa.org/doi/abs/10.2514/1.J056965"
+  },
+  {
+    "title": "Verification of anisotropic mesh adaptation for complex aerospace applications",
+    "authors": "Aravind Balan, Michael A Park, Stephen Wood, William K Anderson",
+    "venue": "N/A",
+    "year": 2020,
+    "url": "https://arc.aiaa.org/doi/abs/10.2514/6.2020-0675"
+  },
+  {
+    "title": "A hybridized discontinuous Galerkin method for three-dimensional compressible flow problems",
+    "authors": "Michael Woopen, Aravind Balan, Georg May",
+    "venue": "N/A",
+    "year": 2014,
+    "url": "https://arc.aiaa.org/doi/pdf/10.2514/6.2014-0938"
+  },
+  {
+    "title": "Adjoint-based anisotropic mesh adaptation for a stabilized finite-element flow solver",
+    "authors": "Aravind Balan, Michael A Park, William K Anderson",
+    "venue": "N/A",
+    "year": 2019,
+    "url": "https://arc.aiaa.org/doi/pdf/10.2514/6.2019-2949"
+  },
+  {
+    "title": "Adjoint-based hp-adaptation for a class of high-order hybridized finite element schemes for compressible flows",
+    "authors": "Aravind Balan, Michael Woopen, Georg May",
+    "venue": "N/A",
+    "year": 2013,
+    "url": "https://arc.aiaa.org/doi/pdf/10.2514/6.2013-2938"
+  },
+  {
+    "title": "A unifying computational framework for adaptive high-order finite element methods",
+    "authors": "Michael Woopen, Aravind Balan, Georg May",
+    "venue": "N/A",
+    "year": 2015,
+    "url": "https://arc.aiaa.org/doi/pdf/10.2514/6.2015-2601"
+  },
+  {
+    "title": "Verification of viscous goal-based anisotropic mesh adaptation",
+    "authors": "Michael A Park, Aravind Balan, Francesco Clerici, Frederic Alauzet, Adrien Loseille, Dmitry S Kamenetskiy, Joshua A Krakos, Todd R Michal, Marshall C Galbraith",
+    "venue": "N/A",
+    "year": 2021,
+    "url": "https://arc.aiaa.org/doi/abs/10.2514/6.2021-1362"
+  },
+  {
+    "title": "Hp-adaptivity on anisotropic meshes for hybridized discontinuous Galerkin scheme",
+    "authors": "Aravind Balan, Michael Woopen, Georg May",
+    "venue": "N/A",
+    "year": 2015,
+    "url": "https://arc.aiaa.org/doi/pdf/10.2514/6.2015-2606"
+  },
+  {
+    "title": "Mesh adaptation and optimization for discontinuous Galerkin methods using a continuous mesh model",
+    "authors": "Ajay Mandyam Rangarajan, Aravind Balan, Georg May",
+    "venue": "N/A",
+    "year": 2016,
+    "url": "https://arc.aiaa.org/doi/pdf/10.2514/6.2016-2142"
+  },
+  {
+    "title": "A stable spectral difference method for triangles",
+    "authors": "Aravind Balan, Georg May, Joachim Sch\u00f6berl",
+    "venue": "N/A",
+    "year": 2011,
+    "url": "https://arc.aiaa.org/doi/pdf/10.2514/6.2011-47"
+  },
+  {
+    "title": "Anisotropic goal-based mesh adaptation metric clarification and development",
+    "authors": "Dmitry S Kamenetskiy, Joshua A Krakos, Todd R Michal, Francesco Clerici, Frederic Alauzet, Adrien Loseille, Michael A Park, Stephen L Wood, Aravind Balan, Marshall C Galbraith",
+    "venue": "N/A",
+    "year": 2022,
+    "url": "https://arc.aiaa.org/doi/abs/10.2514/6.2022-1245"
+  },
+  {
+    "title": "Reynolds-Averaged Navier-Stokes Computations of the NASA Juncture Flow Model Using Expert-Crafted and Adapted Grids",
+    "authors": "Stephen L Wood, W Kyle Anderson, Michael A Park, Aravind Balan, Steve Karman, Kevin Edward Jacobson",
+    "venue": "N/A",
+    "year": 2020,
+    "url": "https://ntrs.nasa.gov/api/citations/20200011459/downloads/20200011459.pdf"
+  },
+  {
+    "title": "Angle-of-attack sweep with mesh adaptation for high-lift configurations",
+    "authors": "Aravind Balan, Michael A Park, Stephen L Wood, William K Anderson, Kevin Jacobson",
+    "venue": "AIAA Scitech 2022 Forum",
+    "year": 2022,
+    "url": "https://arc.aiaa.org/doi/abs/10.2514/6.2022-0218"
+  },
+  {
+    "title": "Space adaptive methods/meshing",
+    "authors": "Ralf Hartmann, A Balan, Francesco Bassi, J-F Boussuge, A de Brauer, J-S Cagnone, Alessandro Colombo, Vincent Couaillier, O Coulaud, Andrea Crivellini, M Franciolini, A Ghidoni, Koen Hillewaert, Marta de la Llave Plata, G Manzinali, Fabbio Naddei, G Noventa, Guillaume Puigt, BC Vermeire, PE Vincent",
+    "venue": "Springer International Publishing",
+    "year": 2021,
+    "url": "https://link.springer.com/chapter/10.1007/978-3-030-62048-6_4"
+  },
+  {
+    "title": "C1. 3 Flow over the NACA0012 airfoil, inviscid and viscous, subsonic and transonic",
+    "authors": "Aravind Balan, Georg May, Jochen Sch\u00fctz, Michael Woopen",
+    "venue": "Second international workshop on high-order CFD methods",
+    "year": 2012,
+    "url": "https://www1.grc.nasa.gov/wp-content/uploads/C1.2_Aachen.pdf"
+  },
+  {
+    "title": "Optimized Runge-Kutta time integration for Spectral Difference Method",
+    "authors": "Julien Vanharen, Guillaume Puigt, Jean-Fran\u00e7ois Boussuge, Aravind Balan",
+    "venue": "Under preparation for Journal of Computational Physics",
+    "year": 2017,
+    "url": "https://scholar.google.com/scholar?cluster=3008760124914270113&hl=en&oi=scholarr"
+  },
+  {
+    "title": "An Adaptive Discretization for the Compressible Navier-Stokes Equations Using Hybridization",
+    "authors": "Michael Woopen, Aravind Balan, Jochen Sch\u00fctz, Georg May",
+    "venue": "Master's thesis, Aachen Institute for Advanced Studies in Computational Engineering Science (AICES), RWTH Aachen University",
+    "year": 2012,
+    "url": "https://scholar.google.com/scholar?cluster=5338197556203326150&hl=en&oi=scholarr"
+  },
+  {
+    "title": "Machine Learning Driven Metric Based Mesh Adaptation",
+    "authors": "Kunal Ghosh, Bakhshi Mehul, Kush Pandya, Dipendrasingh Kain, Aravind Balan, Ajay Rangarajan",
+    "venue": "Proceedings of the International Conference on Applied AI and Scientific Machine Learning, Bangalore, India",
+    "year": 2024,
+    "url": "https://casml.cc/wp-content/uploads/2024/12/Kunal-_Paper_Machine-.pdf"
+  },
+  {
+    "title": "Implementation and Validation of a New Spectral Difference Method for Hyperbolic Conservation Laws Using Raviart-Thomas Elements",
+    "authors": "Aravind Balan",
+    "venue": "RWTH Aachen University",
+    "year": 2011,
+    "url": "https://www.researchgate.net/profile/Aravind-Balan/publication/265036038_Implementation_and_Validation_of_a_New_Spectral_Difference_Method_for_Hyperbolic_Conservation_Laws_Using_Raviart-Thomas_Elements/links/5448e96d0cf2d62c3052d387/Implementation-and-Validation-of-a-New-Spectral-Difference-Method-for-Hyperbolic-Conservation-Laws-Using-Raviart-Thomas-Elements.pdf"
+  },
+  {
+    "title": "Metric-Based HP-Adaptive Discontinuous Galerkin Simulations on Quasi-Structured Quad-Dominant Meshes",
+    "authors": "Dipendrasingh Kain, Priyansu Tank, Aravind Balan",
+    "venue": "AIAA AVIATION FORUM AND ASCEND 2025,3058",
+    "year": 2025,
+    "url": "https://arc.aiaa.org/doi/abs/10.2514/6.2025-3058"
+  },
+  {
+    "title": "Automated Mesh Optimization for CFD Simulations",
+    "authors": "Aravind Balan, Michael A Park, W Kyle Anderson",
+    "venue": "USRA virtual center visit",
+    "year": 2020,
+    "url": "https://ntrs.nasa.gov/citations/20205007395"
+  },
+  {
+    "title": "A Hybridized DG/Mixed Method For Nonlinear Convection-Diffusion Problems",
+    "authors": "Aravind Balan",
+    "venue": "N/A",
+    "year": 2012,
+    "url": "https://pdfs.semanticscholar.org/8819/c2e8baae062d9f2f07e8af7b04b92b3b20db.pdf"
+  },
+  {
+    "title": "Time-Relaxation Methods for High-Order Discretization of Compressible Flow Problems",
+    "authors": "G May, F Iacono, A Balan",
+    "venue": "Numerical Analysis and Applied Mathematics ICNAAM 2011: International Conference on Numerical Analysis and Applied Mathematics",
+    "year": 2011,
+    "url": "https://ui.adsabs.harvard.edu/abs/2011AIPC.1389..903M/abstract"
+  },
+  {
+    "title": "ON THE USE OF HIGH-ORDER NUMERICAL METHODS FOR DNS AND LES OF COMPRESSIBLE ISOTROPIC TURBULENCE",
+    "authors": "Aravind Balan",
+    "venue": "N/A",
+    "year": 2008,
+    "url": "https://scholar.google.com/scholar?cluster=17918719539905020258&hl=en&oi=scholarr"
+  },
+  {
+    "title": "Adjoint-Based hp-Adaptivity on Anisotropic Meshes for High-Order Compressible Flow Simulations Adjungierte hp-Adaption auf anisotropen Gittern f\u00fcr Str\u00f6mungssimulationen h\u00f6herer",
+    "authors": "Aravind Balan",
+    "venue": "N/A",
+    "year": "N/A",
+    "url": "https://www.academia.edu/download/85403750/669026.pdf"
+  }
+]

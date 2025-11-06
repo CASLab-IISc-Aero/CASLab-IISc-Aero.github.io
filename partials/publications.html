@@ -1,112 +1,167 @@
 <div class="tab-content" id="publications">
-    <h2 class="section-title">Publications</h2>
-
-    <div class="card">
-        <p>
-            For full publications visit:
-            <a href="https://scholar.google.co.in/citations?user=7gd1_3MAAAAJ" target="_blank"
-                rel="noopener noreferrer">
-                Google Scholar Page
-            </a>
-        </p>
-
-        <!-- Papers and Talks Section -->
-        <div class="publication-layout">
-
-            <!-- Left Column (Papers) -->
-            <div class="left-column">
-                <h3 class="section-heading">Papers</h3>
-
-                <div class="publication-item">
-
-                    <div class="publication-title">
-                        <a href="https://arc.aiaa.org/doi/abs/10.2514/6.2025-3058" target="blank"
-                            rel="noopener noreferrer">
-                            Metric-Based HP-Adaptive Discontinuous Galerkin Simulations on Quasi-Structured
-                            Quad-Dominant Meshes
-                        </a>
-                    </div>
-
-                    <div class="publication-authors">Dipendrasingh Kain, Priyansu Tank, Aravind Balan</div>
-                    <div class="publication-venue">AIAA AVIATION FORUM AND ASCEND, 2025</div>
-                </div>
-
-                <div class="publication-item">
-
-                    <div class="publication-title">
-
-                        <a href="https://iccfd.org/iccfd12/assets/pdf/papers/ICCFD12_Paper_7-C-02.pdf" target="blank"
-                            rel="noopener noreferrer">
-                            Anisotropically Adapted Quad-dominant Meshes for High-order Discontinuous Galerkin Methods
-                        </a>
-
-                    </div>
-
-                    <div class="publication-authors">Dipendrasingh Kain, Gowri Maya, Aravind Balan, Georg May, Ajay
-                        Rangarajan</div>
-                    <div class="publication-venue">Twelfth International Conference on Computational Fluid Dynamics
-                        (ICCFD12), 2024/7</div>
-                </div>
-
-
-                <div class="publication-item">
-
-                    <div class="publication-title">
-
-                        <a href="https://casml.cc/wp-content/uploads/2024/12/Kunal-_Paper_Machine-.pdf" target="blank"
-                            rel="noopener noreferrer">
-                            Machine Learning Driven Metric Based Mesh Adaptation
-                        </a>
-
-                    </div>
-
-                    <div class="publication-authors">Kunal Ghosh, Bakhshi Mehul, Kush Pandya, Dipendrasingh
-                        Kain,
-                        Aravind Balan,
-                        Ajay Rangarajan</div>
-                    <div class="publication-venue">Proceedings of the International Conference on Applied AI and
-                        Scientific
-                        Machine Learning, Bangalore, India, 2024-12</div>
-                </div>
-
-
-                <div class="publication-item">
-
-                    <div class="publication-title">
-
-                        <a href="https://iccfd.org/iccfd12/assets/pdf/papers/ICCFD12_Paper_7-C-03.pdf" target="blank"
-                            rel="noopener noreferrer">
-                            Application of High-order Discontinuous Galerkin Methods for Aerodynamic Shape Optimization
-                            with Adaptive Meshing
-                        </a>
-
-                    </div>
-
-                    <div class="publication-authors">Pandya Kush Tusharbhai, Aravind Balan, Georg May</div>
-                    <div class="publication-venue">Twelfth International Conference on Computational Fluid Dynamics
-                        (ICCFD12)
-                    </div>
-                </div>
-
-
-                <!--
-                <div class="publication-item">
-                    <div class="publication-title">
-                        <a href="" target="blank" rel="noopener noreferrer">
-                            TITLE
-                        </a>
-                    </div>
-
-                    <div class="publication-authors"> AUTHORS </div>
-                    <div class="publication-venue"> VENUE </div>
-                </div>
-                -->
-
-            </div>
-
-        </div>
+    <h2>Publications 🔬</h2>
+    <p>For most up-to-date information, please visit Google Scholar <a href="https://scholar.google.co.in/citations?user=7gd1_3MAAAAJ">Page</a>.</p>
+    <hr>
+    
+    <div id="publications-list">
+        <p>Loading publications...</p>
     </div>
 </div>
 
+<script>
+    // --- Configuration ---
+    const pubsPerPage = 10; // How many publications to load at a time at frist 
+    const pubsOnClick = 10; //this adds 10 more on frist click
+    const maxVisibleAuthors = 3; // How many authors to show before "...more"
+    
+    // --- Global Variables ---
+    let allPublications = []; // Will store all publications after fetch
+    let currentIndex = 0;     // Tracks how many publications are *currently* visible
+    const container = document.getElementById('publications-list');
+    let loadMoreButton = null; // A reference to the "Load More" button
 
-<!-- Right Column (Talks) -->
+    // This is the main function that runs on page load
+    async function initialLoad() {
+        try {
+            const response = await fetch('publications.json');
+            // Stop if the fetch failed
+            if (!response.ok) {
+                throw new Error(`HTTP error! status: ${response.status}`);
+            }
+            const pubs = await response.json();
+
+            if (!pubs || pubs.length === 0) {
+                container.innerHTML = '<p>No publications found.</p>';
+                return;
+            }
+
+            // Sort publications by year and store them in the global variable
+            pubs.sort((a, b) => b.year - a.year);
+            allPublications = pubs;
+
+            // Clear the "Loading..." message
+            container.innerHTML = '';
+
+            // Display the *first* batch of publications
+            displayNextBatch();
+
+            // Create and add the "Load More" button *if* needed
+            createLoadMoreButton();
+
+        } catch (error) {
+            console.error('Failed to load publications:', error);
+            container.innerHTML = '<p>Error: Could not load publications data. Check console for details.</p>';
+        }
+    }
+
+    // This function creates a single publication card
+    // I've moved the logic here to keep it clean
+    function createPublicationCard(pub) {
+        const pubDiv = document.createElement('div');
+        pubDiv.className = 'card publication-entry';
+
+        // 1. Title
+        const titleLink = document.createElement('a');
+        titleLink.href = pub.url || '#';
+        titleLink.target = '_blank';
+        titleLink.innerHTML = `<h4>${pub.title || 'Untitled Publication'}</h4>`;
+        pubDiv.appendChild(titleLink);
+
+        // 2. Authors (with "show more" logic)
+        const authorsP = document.createElement('p');
+        authorsP.className = 'authors';
+
+        if (typeof pub.authors === 'string' && pub.authors.length > 0) {
+            const allAuthors = pub.authors.split(', ');
+            if (allAuthors.length > maxVisibleAuthors) {
+                // Case: Too many authors
+                const visibleAuthors = allAuthors.slice(0, maxVisibleAuthors).join(', ');
+                const hiddenAuthors = allAuthors.slice(maxVisibleAuthors).join(', ');
+
+                const visibleSpan = document.createElement('span');
+                visibleSpan.textContent = visibleAuthors;
+
+                const hiddenSpan = document.createElement('span');
+                hiddenSpan.textContent = `, ${hiddenAuthors}`;
+                hiddenSpan.style.display = 'none';
+
+                const moreLink = document.createElement('a');
+                moreLink.textContent = ' ...more';
+                moreLink.href = '#';
+                moreLink.className = 'more-authors';
+                
+                moreLink.onclick = (e) => {
+                    e.preventDefault();
+                    hiddenSpan.style.display = 'inline';
+                    moreLink.style.display = 'none';
+                };
+
+                authorsP.appendChild(visibleSpan);
+                authorsP.appendChild(moreLink);
+                authorsP.appendChild(hiddenSpan);
+            } else {
+                // Case: Not too many authors
+                authorsP.textContent = pub.authors;
+            }
+        } else {
+            // Case: Authors field is missing
+            authorsP.textContent = 'Authors not listed';
+        }
+        pubDiv.appendChild(authorsP);
+
+        // 3. Venue and Year (with "N/A" check)
+        const venueYearP = document.createElement('p');
+        venueYearP.className = 'venue-year';
+        
+        const venue = (typeof pub.venue === 'string' && pub.venue.length > 0 && pub.venue !== 'N/A') ? pub.venue : '';
+        const year = (pub.year && pub.year.toString() !== 'N/A') ? pub.year : '';
+
+        if (venue && year) {
+            venueYearP.textContent = `${venue}, ${year}`;
+        } else {
+            venueYearP.textContent = venue || year; // Show whichever one exists
+        }
+        pubDiv.appendChild(venueYearP);
+        
+        return pubDiv;
+    }
+
+    // This function adds the *next* batch of publications to the page
+    function displayNextBatch() {
+        // Get the slice of publications we need to show
+        const nextBatch = allPublications.slice(currentIndex, currentIndex + pubsPerPage);
+
+        // Create a card for each publication in the batch
+        nextBatch.forEach(pub => {
+            const pubDiv = createPublicationCard(pub);
+            container.appendChild(pubDiv);
+        });
+
+        // Update the index for the next click
+        currentIndex += pubsPerPage;
+
+        // If we've shown all publications, hide the "Load More" button
+        if (currentIndex >= allPublications.length && loadMoreButton) {
+            loadMoreButton.style.display = 'none';
+        }
+    }
+
+    // This function creates the "Load More" button
+    function createLoadMoreButton() {
+        // Only create the button if there are more publications than the first page
+        if (allPublications.length > pubsPerPage) {
+            loadMoreButton = document.createElement('button');
+            loadMoreButton.textContent = 'More Publications';
+            loadMoreButton.className = 'load-more-btn';
+            
+            // When clicked, just run the displayNextBatch function
+            loadMoreButton.onclick = displayNextBatch;
+            
+            // Add the button to the page, *after* the list container
+            container.after(loadMoreButton);
+        }
+    }
+
+    // Run the main function when the script loads
+    initialLoad();
+</script>
