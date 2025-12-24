@@ -1,5 +1,12 @@
 [
   {
+    "title": "Aerodynamic Shape Optimization with Discretization Error Control for High-order Compressible Flow Simulations",
+    "authors": "Kush Pandya, Aravind Balan",
+    "venue": "Computers & Fluids",
+    "year": 2025,
+    "url": "https://www.sciencedirect.com/science/article/pii/S0045793025004098"
+  },
+  {
     "title": "A comparison of hybridized and standard DG methods for target-based hp-adaptive simulation of compressible flow",
     "authors": "Michael Woopen, Aravind Balan, Georg May, Jochen Sch\u00fctz",
     "venue": "Computers & Fluids",
