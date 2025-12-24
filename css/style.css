@@ -275,6 +275,8 @@ nav {
     height: calc(100vh - 60px);
     /* Adjust height to take up the full vertical space minus the nav height */
     overflow-y: auto;
+    text-align: justify;
+    text-justify: inter-word;
     /* Ensure scrolling for the sidebar content */
 }
 
